@@ -44,6 +44,14 @@ h3, p {
     transform: scale(1.2);
 }
 
+.fa-heart.fa-solid{
+    color: #ff0000;
+}
+
+.fa-heart.fa-regular{
+    color: #ffffff;
+}
+
 /* Info Section */
 .info {
     display: flex;
