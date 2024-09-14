@@ -8,6 +8,7 @@ import More from "./pages/More";
 import Detail from "./pages/Detail";
 import Favorites from "./pages/Favorites";
 import NotFound from "./pages/NotFound";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/favorites" component={Favorites}/>
           <Route path="" component={NotFound}/>
         </Switch>
+        <Footer />
     </>
   );
  }
