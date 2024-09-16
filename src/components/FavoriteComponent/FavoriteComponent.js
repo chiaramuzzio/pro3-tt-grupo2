@@ -10,43 +10,36 @@ class FavoriteComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            favoritos: [],
             peliculas: []
         };
     }
-
-
+    
     componentDidMount() {
         const recuperoStorage = localStorage.getItem('favoritos');
         if (recuperoStorage) {
             const favoritos = JSON.parse(recuperoStorage);
-            this.setState({ favoritos });
-            this.fetchPeliculas(favoritos);
-        }
-    }
-
-
-    fetchPeliculas(favoritos) {
-        favoritos.forEach(idFavv => {
-            const url = `https://api.themoviedb.org/3/movie/${idFavv}?api_key=${api_key}`;
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    this.setState({ peliculas: [...this.state.peliculas, data] });
+            const promises = favoritos.map(idFavv => {
+                const url = `https://api.themoviedb.org/3/movie/${idFavv}?api_key=${api_key}`;
+                return fetch(url).then(response => response.json());
+            });
+    
+            Promise.all(promises)
+                .then(peliculas => {
+                    this.setState({ peliculas });
                 })
                 .catch(error => {
                     console.log('El error es: ' + error);
                 });
-        });
+        }
     }
 
 
     render() {
-        const { favoritos, peliculas } = this.state;
+        const { peliculas } = this.state;
 
         return (
             <div className="favorite-component">
-                {favoritos.length === 0 ? (
+                {peliculas.length === 0 ? (
                     <p>No hay favoritos seleccionados</p>
                 ) :
                 (
