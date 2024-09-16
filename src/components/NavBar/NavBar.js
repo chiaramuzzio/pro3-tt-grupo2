@@ -9,8 +9,8 @@ const NavBar = () => {
                 <Link to="/" className="cinepedia">
                     <h1 className='cinepedia'>CINEPEDIA</h1>
                 </Link>
-                <Link to="/favoritos" className="navegador">Favoritos</Link>
-                <Link to="/generos" className="navegador">Géneros</Link>
+                <Link to="/favorites" className="navegador">Favoritos</Link>
+                <Link to="/genres" className="navegador">Géneros</Link>
             </nav>
         </>
     );

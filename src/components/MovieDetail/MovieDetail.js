@@ -48,25 +48,6 @@ class MovieDetail extends Component {
         }
     }
 
-
-    // eventoFavoritos = () => {
-    //     const id  = this.props.id;
-    //     let { favoritos } = this.state;
-
-
-    //     if (favoritos.includes(id)) {
-    //         favoritos = favoritos.filter(favId => favId !== id);      
-    //     }
-    //     else {
-    //         favoritos.push(id);
-    //     }
-
-    //     this.setState({ favoritos });
-
-    //     localStorage.setItem('favoritos', JSON.stringify(favoritos));
-    // }
-
-
     render() {
         const { movie, loading, trailerKey, isFavorito } = this.state;
         const id = this.props.id;

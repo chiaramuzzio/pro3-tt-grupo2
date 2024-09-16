@@ -22,6 +22,7 @@ function App() {
           <Route exact path="/see-more/category/:category" component={More}/>
           <Route path="/movie-detail/id/:id" component={Detail}/>
           <Route exact path="/favorites" component={Favorites}/>
+          <Route exact path="/genres" component={Favorites}/>
           <Route path="" component={NotFound}/>
         </Switch>
         <Footer />
