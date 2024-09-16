@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 13vh 25px 16vh 45px;
+    padding: 13vh 0 16vh 0;
 }
 
 h3, p {
