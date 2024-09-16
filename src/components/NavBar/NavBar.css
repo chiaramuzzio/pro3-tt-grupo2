@@ -1,0 +1,14 @@
+.menu{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.navegador {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}

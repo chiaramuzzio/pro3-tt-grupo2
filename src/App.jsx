@@ -8,12 +8,14 @@ import More from "./pages/More";
 import Detail from "./pages/Detail";
 import Favorites from "./pages/Favorites";
 import NotFound from "./pages/NotFound";
+import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
 
 function App() {
   return (
     <>
+        <Header/>
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/search-results" component={Search}/>

@@ -16,6 +16,9 @@ class MovieDetail extends Component {
     }
 
     componentDidMount() {
+
+        //agregar this.setstate(loading: true)
+
         const id = this.props.id;
         const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`;
         let urlVideo = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_key}`
