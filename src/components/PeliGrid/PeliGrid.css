@@ -1,0 +1,13 @@
+.categoria{
+    margin-top: 40px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.portada{
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
