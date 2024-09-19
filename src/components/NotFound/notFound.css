@@ -1,0 +1,12 @@
+.gifNotFound{
+    height: 450px;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.NotFound{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
