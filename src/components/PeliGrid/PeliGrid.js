@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Peli from "../Peli/Peli"
+import {Link} from "react-router-dom"
 import "./PeliGrid.css";
 
 class PeliGrid extends Component {
@@ -25,6 +26,8 @@ class PeliGrid extends Component {
                             <Peli key={idx} pelicula={pelicula} />
                         ))}
                     </div>  
+                    
+                    <Link className="button" to=""> Ver Todas </Link>
                 </article>
             </>
         );

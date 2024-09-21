@@ -11,3 +11,26 @@
     justify-content: left;
     flex-wrap: wrap;
 }
+.button {
+    color: #ffffff;
+    background-color: #5028f0;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #5028f0;
+    border-radius: 100px;
+    padding: 17px 50px;
+    margin-top: 40px;
+    margin-right: 40px;
+    height: 60px;
+    width: 180px;
+    transition: transform 300ms ease-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button:hover {
+    color: #2d63c8;
+    background-color: #ffffff;
+    transform: translate(0px, 0px) scale(1.02, 1.02);
+}
+

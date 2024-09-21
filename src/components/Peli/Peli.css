@@ -4,14 +4,15 @@ h3{
 }
 
 h4{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
-    font-weight: bolder;
+    font-weight: 500;
 }
 
 p{
     font-family: 'Roboto', sans-serif;
     color: white;
+    font-size: 12px;
 }
 .main_home{
     margin: auto;
@@ -84,3 +85,30 @@ p{
 .ocultar {
     display: none;  /* Oculta el contenido */
 }
+
+.desc {
+    margin: 15px 0  ;
+    margin-right: 15px;
+    padding: 10px;
+    line-height: 1.6;
+    text-align: justify;
+    background-color: #5028f0;
+    border-radius: 5px;
+    max-width: 800px;
+}
+
+
+
+.detalle a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5028f0; /* Color de fondo */
+    color: white; /* Color del texto */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 100px;
+    font-weight: bold;
+    padding-top: 16px;
+    height: 35px;
+}
+
