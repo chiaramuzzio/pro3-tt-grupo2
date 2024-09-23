@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./MovieDetail.css";
 import Favorito from '../../modules/favorito';
+import Loader from "../Loader/Loader";
 
 const api_key = "378786c706182646715863ed0e6d66cc";
 
@@ -53,7 +54,7 @@ class MovieDetail extends Component {
         const id = this.props.id;
 
         if (loading) {
-            return <p>Cargando...</p>;
+            return <Loader/>
         }
 
         return (

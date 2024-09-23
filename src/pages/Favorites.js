@@ -1,20 +1,36 @@
+import React, { Component } from "react";
 import FavoriteComponent from "../components/FavoriteComponent/FavoriteComponent";
+import Loader from "../components/Loader/Loader"; 
 
-const Favorites = () => {
-    return (
-        <>
-        <main class="main_home">
-                <section class="seccion1">
-                    <article class="categoria">
-                        <h2>Favoritos</h2>
-                       
-                        <div class ="portada">
-                            <FavoriteComponent />
-                        </div>
-                    </article>
-                </section>
-        </main>
-        </>
-    );
+
+class Favorites extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: true 
+        };
+    }
+
+    componentDidMount() {
+            this.setState({ loading: false }); 
+    }
+
+    render() {
+        return (
+            <>
+                <main className="main_home">
+                    <section className="seccion1">
+                        <article className="categoria">
+                            <h2>Favoritos</h2>
+                            <div className="portada">
+                                {this.state.loading ? (<Loader />) : (<FavoriteComponent />)}
+                            </div>
+                        </article>
+                    </section>
+                </main>
+            </>
+        );
+    }
 }
+
 export default Favorites;
