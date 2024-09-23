@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PeliGrid from "../components/PeliGrid/PeliGrid";
 import Loader from "../components/Loader/Loader";
+import SearchForm from "../components/SearchForm/SearchForm";
 
 const api_key = "378786c706182646715863ed0e6d66cc";
 const urlPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`;
@@ -26,6 +27,7 @@ componentDidMount() {
       <>
       {this.state.loading ? (<Loader />) : 
       (<>
+      <SearchForm history={this.props.history} />
       <PeliGrid url={urlEstrenos} titulo="Estrenos" />
       <PeliGrid url={urlPopulares} titulo="Peliculas Populares" />
       </>)}

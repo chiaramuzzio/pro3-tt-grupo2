@@ -17,7 +17,8 @@ class SearchForm extends Component {
         })
     }
     handleFormSubmit(){
-        this.props.history.push("/search" , {query: this.state.query});
+        this.props.history.push("/search-results" , {query: this.state.query});
+        //console.log(this.state.query)
        }
 
     render() {

@@ -10,7 +10,9 @@ const NavBar = () => {
                     <h1 className='cinepedia'>CINEPEDIA</h1>
                 </Link>
                 <Link to="/favorites" className="navegador">Favoritos</Link>
-                <Link to="/genres" className="navegador">Géneros</Link>
+                <Link to="/genres" className="navegador">Populares</Link>
+                <Link to="/genres" className="navegador">Estrenos</Link>
+
             </nav>
         </>
     );
