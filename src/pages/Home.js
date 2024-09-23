@@ -34,7 +34,7 @@ componentDidMount() {
      <>
      {this.state.loading ? (<Loader />) :
      (<>
-     <SearchForm history={this.props.history} />
+      <SearchForm history={this.props.history} />
      <PeliGrid url={urlEstrenos} titulo="Estrenos" todas ="/estrenos"/>
      <PeliGrid url={urlPopulares} titulo="Peliculas Populares" todas ="/populares" />
      </>)}
