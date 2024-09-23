@@ -6,7 +6,7 @@ const Favorito = {
         let favoritos = recuperoStorage ? JSON.parse(recuperoStorage) : [];
 
         if (!favoritos.includes(id)) {
-            favoritos.push(id);
+            favoritos.unshift(id);
             localStorage.setItem('favoritos', JSON.stringify(favoritos));
             return true
         }

@@ -22,7 +22,7 @@ class Favorites extends Component {
                     <section className="seccion1">
                         <article className="categoria">
                             <h2>Favoritos</h2>
-                            <div className="portada">
+                            <div className="portadaGrid">
                                 {this.state.loading ? (<Loader />) : (<FavoriteComponent />)}
                             </div>
                         </article>
