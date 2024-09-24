@@ -1,7 +1,6 @@
 import React from 'react';
 import Peli from '../Peli/Peli';
 
-
 const PeliGrid2 = ({datos}) => {
    return (
        <>
@@ -11,6 +10,5 @@ const PeliGrid2 = ({datos}) => {
        </>
    );
 }
-
 
 export default PeliGrid2

@@ -25,8 +25,8 @@ class Detail extends Component {
         <section className="sct_detail">
           <article>
             <div className="dtl_pelicula">
-            {this.state.loading ? (<Loader />) : (this.state.id && <MovieDetail id={this.state.id} />)}
-            {/* {this.state.id && <MovieDetail id={this.state.id} />} */}
+              {this.state.loading ? (<Loader />) : (this.state.id && <MovieDetail id={this.state.id} />)}
+              {/* {this.state.id && <MovieDetail id={this.state.id} />} */}
             </div>
           </article>
         </section>

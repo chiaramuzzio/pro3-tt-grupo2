@@ -32,8 +32,7 @@ class SearchForm extends Component {
                             value={this.state.query}
                         />
 
-                        <button className="lupa" onClick={()=> this.handleFormSubmit()} >Search</button>
-
+                        <button className="lupa" onClick={()=> this.handleFormSubmit()}>Search</button>
                     </form>
                 </div>
             </>

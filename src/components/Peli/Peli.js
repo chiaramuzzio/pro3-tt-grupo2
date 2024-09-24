@@ -40,7 +40,7 @@ class Peli extends Component {
                 <div className="portada">
                     <div className="pelicula">
                         <Link to={`./movie-detail/id/${id}`}>
-                            <img id="fotopeli" className="fotos" src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={title} />
+                            <img id="fotopeli" className="fotos" src={poster_path ? `https://image.tmdb.org/t/p/w200${poster_path}` : "./img/movies/not_available.png"} alt={title} />
                         </Link>
                         <div className="titfav">
                             <Link to={`./movie-detail/id/${id}`}>
@@ -58,7 +58,6 @@ class Peli extends Component {
                         </article>
 
                         <div className="botones">
-
                             <button className="verDetalle vermas" onClick={this.handleverDescripcion}>
                                 {this.state.verDescripcion ? "Ocultar Descripción" : "Ver Descripción"}
                             </button>

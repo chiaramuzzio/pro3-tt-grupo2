@@ -55,5 +55,4 @@ class FavoriteComponent extends Component {
     }
 }
 
-
 export default FavoriteComponent;

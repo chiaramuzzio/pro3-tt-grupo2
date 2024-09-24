@@ -22,7 +22,7 @@ class PeliGrid extends Component {
                 <article className="categoria">
                     <div className="divTitulo">
                         <h3 className='titulo'>{this.props.titulo}</h3>  
-                        <Link className="buttonTodas" to=""> Ver Todas </Link>
+                        <Link className="buttonTodas" to={this.props.todas}>Ver Todas</Link>
                     </div>
                     <div className="portadaGrid"> 
                     {this.state.datos.slice(0, 5).map((pelicula, idx) => (  
