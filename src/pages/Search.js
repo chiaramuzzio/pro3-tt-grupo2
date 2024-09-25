@@ -1,7 +1,8 @@
 import React from 'react';
 import { Component } from 'react';
-import PeliGrid2 from '../components/PeliGrid2/PeliGrid2';
+import PeliGrid from '../components/PeliGrid/PeliGrid';
 import Loader from '../components/Loader/Loader';
+
 
 class ResultadoBusqueda extends Component {
     constructor(props) {
@@ -12,11 +13,12 @@ class ResultadoBusqueda extends Component {
         };
     }
 
+
     componentDidMount() {
         this.setState({
             isLoading:true,
         })
-        
+       
         fetch(`https://api.themoviedb.org/3/search/movie?query=${this.props.location.state.query}&api_key=f2d31985b9fc9e720758bcc82e3c955b`)
         .then((res) => res.json())
         .then((data) => {
@@ -26,15 +28,16 @@ class ResultadoBusqueda extends Component {
             })
         })
         .catch((e) => console.log(e))
-        }
+    }
+
 
     render() {
         return (
             <>
                 {!this.state.isLoading ? (
                     <div>
-                        <h2>Resultados de tu busqueda:</h2>
-                        <PeliGrid2 datos={this.state.peliculas}/>
+                        <h2>Resultados de tu busqueda: {this.props.location.state.query}</h2>
+                        <PeliGrid peliculas={this.state.peliculas}/>
                     </div>
                 ):(
                     <Loader/>
@@ -44,5 +47,6 @@ class ResultadoBusqueda extends Component {
         )
     }
 }
+
 
 export default ResultadoBusqueda;
