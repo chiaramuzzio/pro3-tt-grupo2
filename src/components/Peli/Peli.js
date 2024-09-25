@@ -39,11 +39,11 @@ class Peli extends Component {
             <>
                 <div className="portada">
                     <div className="pelicula">
-                        <Link to={`./movie-detail/id/${id}`}>
+                        <Link to={`/movie-detail/id/${id}`}>
                             <img id="fotopeli" className="fotos" src={poster_path ? `https://image.tmdb.org/t/p/w200${poster_path}` : "./img/movies/not_available.png"} alt={title} />
                         </Link>
                         <div className="titfav">
-                            <Link to={`./movie-detail/id/${id}`}>
+                            <Link to={`/movie-detail/id/${id}`}>
                                 <h4 id={id} className="capturarId">{truncar(title)}</h4>
                             </Link>
                             <i
