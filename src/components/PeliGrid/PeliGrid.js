@@ -24,7 +24,7 @@ class PeliGrid extends Component {
                     </div>
                     <div className="portadaGrid">
                     {peliculas.map((pelicula, idx) => (  
-                            <Peli key={idx} pelicula={pelicula} favoritos={this.state.favoritos} agregar={Favorito.agregar} quitar={Favorito.quitar}/>
+                            <Peli key={idx} pelicula={pelicula} />
                         ))}
                     </div>  
                    

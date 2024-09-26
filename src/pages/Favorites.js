@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import FavoriteComponent from "../components/FavoriteComponent/FavoriteComponent";
 import Loader from "../components/Loader/Loader"; 
+import FavoriteComponent from "../components/FavoriteComponent/FavoriteComponent";
 
 
 class Favorites extends Component {
@@ -10,19 +10,15 @@ class Favorites extends Component {
             loading: true 
         };
     }
-
+    
     componentDidMount() {
-        this.setState({ loading: false }); 
+        this.setState({ loading: false });
     }
 
     render() {
-        if (this.state.loading) {
-            return <Loader />;
-        }
-        
-        return (
-            <FavoriteComponent />
-        );
+        const { loading } = this.state;
+
+        return loading ? <Loader /> : <FavoriteComponent />;
     }
 }
 
