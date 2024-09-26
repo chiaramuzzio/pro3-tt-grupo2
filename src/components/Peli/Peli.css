@@ -147,12 +147,16 @@ p{
     color: #2d63c8;
     background-color: #ffffff;
     transform: translate(0px, 0px) scale(1.02, 1.02);
+    cursor: pointer;
+
 }
 
-.verDetalle a :hover {
+.verDetalle:hover {
     color: #2d63c8;
     background-color: #ffffff;
     transform: translate(0px, 0px) scale(1.02, 1.02);
+    cursor: pointer;
+
 }
 
 .botones{
