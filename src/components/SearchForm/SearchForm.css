@@ -10,12 +10,29 @@
 }
 
 .lupa{
-    margin-right: 5px;
-    background-color: #5028f0;
-    color: white;
+    display: inline;
+    align-items: center; 
+    justify-content: center; 
+    padding: 10px 20px;
+    background-color: #5028f0; 
+    color: white; 
+    text-align: center;
+    text-decoration: none;
+    border-radius: 100px;
+    font-weight: lighter;
+    height: 35px;
     border: 0px;
-    size: 5px;
+    font-size: small;
+    margin-left: 5px;
 }
+
+.lupa:hover {
+    color: #2d63c8;
+    background-color: #ffffff;
+    transform: translate(0px, 0px) scale(1.02, 1.02);
+    cursor: pointer;
+}
+
 
 .buscar{
     font-family: 'Poppins', sans-serif;

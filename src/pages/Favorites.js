@@ -12,7 +12,7 @@ class Favorites extends Component {
     }
 
     componentDidMount() {
-            this.setState({ loading: false }); 
+        this.setState({ loading: false }); 
     }
 
     render() {
