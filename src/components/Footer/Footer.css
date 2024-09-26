@@ -19,3 +19,10 @@ footer{
     width: 50px;
     padding-right: 10px;
 }
+
+@media(max-width:420px){
+    footer{
+        font-size: smaller;
+        height: 7vh;
+    }
+}

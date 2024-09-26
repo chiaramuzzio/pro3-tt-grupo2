@@ -13,3 +13,12 @@
     text-decoration: none;
     margin-right: 150px;
 }
+
+@media (max-width: 420px) {
+    .menu {
+        flex-direction: column;
+        font-size: smaller;
+        height: 30vh;
+        width: 95vw;
+    }
+}
