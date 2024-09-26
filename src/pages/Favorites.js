@@ -16,19 +16,12 @@ class Favorites extends Component {
     }
 
     render() {
+        if (this.state.loading) {
+            return <Loader />;
+        }
+        
         return (
-            <>
-                <main className="main_home">
-                    <section className="seccion1">
-                        <article className="categoria">
-                            <h2>Favoritos</h2>
-                            <div className="portadaGrid">
-                                {this.state.loading ? (<Loader />) : (<FavoriteComponent />)}
-                            </div>
-                        </article>
-                    </section>
-                </main>
-            </>
+            <FavoriteComponent />
         );
     }
 }

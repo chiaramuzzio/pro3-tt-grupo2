@@ -10,29 +10,45 @@ class Peli extends Component {
             verDescripcion: false,
             isFavorito: false
         };
-
     }
 
     handleverDescripcion = () => {
         this.setState({
             verDescripcion: !this.state.verDescripcion
         });
-        
     }
 
     componentDidMount() {
         const id = this.props.pelicula.id;
-
-        let recuperoStorage = JSON.parse(localStorage.getItem('favoritos')) ;
+        let recuperoStorage = JSON.parse(localStorage.getItem('favoritos'));
         if (recuperoStorage != null && recuperoStorage.includes(id)) {
             this.setState({ isFavorito: true });
         }
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.isFavorito !== this.props.isFavorito) {
+            this.setState({ isFavorito: this.props.isFavorito });
+        }
+    }
+
+    handleFavoritoClick = () => {
+        const { id } = this.props.pelicula;
+        const { agregar, quitar } = this.props;
+        const { isFavorito } = this.state;
+
+        if (isFavorito) {
+            const [nuevoEstado, favoritos] = quitar(id);
+            this.setState({ isFavorito: nuevoEstado });
+        } else {
+            const [nuevoEstado, favoritos] = agregar(id);
+            this.setState({ isFavorito: nuevoEstado });
+        }
+    }
+
     render() {
         const { id, title, overview, poster_path } = this.props.pelicula;
-        const { isFavorito } = this.state; 
-
+        const { isFavorito } = false;
         const truncar = (str) => str.length > 17 ? str.substring(0, 17) + "..." : str;
 
         return (
@@ -48,7 +64,7 @@ class Peli extends Component {
                             </Link>
                             <i
                                 id={id}
-                                onClick={isFavorito ? () => this.setState({isFavorito: Favorito.quitar(id)}) : () => this.setState({isFavorito: Favorito.agregar(id)})}
+                                onClick={this.handleFavoritoClick}
                                 className={`fa-heart ${isFavorito ? 'fa-solid' : 'fa-regular'}`}
                             ></i>
                         </div>

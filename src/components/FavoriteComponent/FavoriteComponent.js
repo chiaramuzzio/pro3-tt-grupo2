@@ -1,54 +1,72 @@
 import React, { Component } from "react";
 import "./FavoriteComponent.css";
+import PeliGrid from "../PeliGrid/PeliGrid";
 import Peli from "../Peli/Peli";
+import Favorito from "../../modules/favorito";
 
 const api_key = "378786c706182646715863ed0e6d66cc";
-
 
 class FavoriteComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            peliculas: []
+            peliculas: [],
+            favoritos: Favorito.buscar(),
+            loading: true,
         };
     }
     
     componentDidMount() {
-        const recuperoStorage = localStorage.getItem('favoritos');
-        if (recuperoStorage) {
-            const favoritos = JSON.parse(recuperoStorage);
-            const promises = favoritos.map(idFavv => {
-                const url = `https://api.themoviedb.org/3/movie/${idFavv}?api_key=${api_key}`;
-                return fetch(url).then(response => response.json());
+        const favoritos = this.state.favoritos;
+        console.log(favoritos);
+        if (favoritos.length > 0) {
+            favoritos.forEach((id) => {
+                fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        this.setState(prevState => ({
+                            peliculas: [...prevState.peliculas, data]
+                        }));
+                    })
+                    .catch(error => console.error("Error fetching movie:", error));
             });
-    
-            Promise.all(promises)
-                .then(peliculas => {
-                    this.setState({ peliculas });
-                })
-                .catch(error => {
-                    console.log('El error es: ' + error);
-                });
         }
+        this.setState({ loading: false });
     }
 
+    agregar = (id) => {
+        const resultado = Favorito.agregar(id);
+        this.setState({ favoritos: resultado });
+        return [true, resultado];
+    }
+
+    quitar = (id) => {
+        const newPeliculas = this.state.peliculas.filter((pelicula) => pelicula.id !== id);
+        const resultado = Favorito.quitar(id);
+        this.setState({ favoritos: resultado, peliculas: newPeliculas });
+        return [false, resultado];
+    }
 
     render() {
         const { peliculas } = this.state;
 
         return (
             <div className="portadaGrid">
-                {peliculas.length === 0 ? (
+                {!this.state.loading && peliculas.length === 0 ? (
                     <p>No hay favoritos seleccionados</p>
                 ) :
                 (
-                    <div className="portadaGrid">
-                        {peliculas.map((data, idx) => {
-                            return (
-                                <Peli key={idx} pelicula={data} />
-                            );
-                        })}
+                    <article className="categoria">
+                    <div className="divTitulo">
+                        <h3 className='titulo'>Favoritos</h3>  
                     </div>
+                    <div className="portadaGrid">
+                    {peliculas.map((pelicula, idx) => (  
+                            <Peli key={idx} pelicula={pelicula} favoritos={this.state.favoritos} agregar={this.agregar} quitar={this.quitar} />
+                        ))}
+                    </div>  
+                   
+                </article>
                 )}
             </div>
         );

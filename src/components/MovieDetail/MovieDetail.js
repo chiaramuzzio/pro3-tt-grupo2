@@ -60,7 +60,7 @@ class MovieDetail extends Component {
                     <h3 id="titdetmo">{movie.title}</h3>
                     <i
                         id={movie.id}
-                        onClick={isFavorito ? () => this.setState({isFavorito: Favorito.quitar(id)}) : () => this.setState({isFavorito: Favorito.agregar(id)})}
+                        onClick={isFavorito ? () => this.setState({isFavorito: Favorito.quitar(id)[0]}) : () => this.setState({isFavorito: Favorito.agregar(id)[0]})}
                         className={`fa-heart ${isFavorito ? 'fa-solid' : 'fa-regular'}`}
                     ></i>
                 </div>

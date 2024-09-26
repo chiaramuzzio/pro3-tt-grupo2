@@ -3,13 +3,9 @@ import PeliGrid from "../components/PeliGrid/PeliGrid";
 import Loader from "../components/Loader/Loader";
 import SearchForm from "../components/SearchForm/SearchForm";
 
-
 const api_key = "378786c706182646715863ed0e6d66cc";
 const urlPopulares = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}`;
 const urlEstrenos = `https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}`;
-
-
-
 
 class Home extends Component {
 
@@ -23,13 +19,11 @@ class Home extends Component {
     };
   }
 
-
   componentDidMount() {
     this.fetchTMDB(urlEstrenos, "estrenos");
     this.fetchTMDB(urlPopulares, "populares");
     this.setState({ loading: false });
   }
-
 
   fetchTMDB(url, keyState) {
     fetch(url)

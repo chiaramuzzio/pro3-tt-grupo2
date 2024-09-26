@@ -1,6 +1,10 @@
 //importar en CARD y en movie-detail
 
 const Favorito = {
+    buscar: () =>{
+        const recuperoStorage = localStorage.getItem('favoritos');
+        return recuperoStorage ? JSON.parse(recuperoStorage) : [];
+    },
     agregar: (id) => {
         const recuperoStorage = localStorage.getItem('favoritos');
         let favoritos = recuperoStorage ? JSON.parse(recuperoStorage) : [];
@@ -8,7 +12,7 @@ const Favorito = {
         if (!favoritos.includes(id)) {
             favoritos.unshift(id);
             localStorage.setItem('favoritos', JSON.stringify(favoritos));
-            return true
+            return [true, favoritos]
         }
     },
     quitar: (id) => {
@@ -18,7 +22,7 @@ const Favorito = {
         if (favoritos.includes(id)) {
             favoritos = favoritos.filter(favId => favId !== id);
             localStorage.setItem('favoritos', JSON.stringify(favoritos));
-            return false
+            return [false, favoritos]
         }
         }
 

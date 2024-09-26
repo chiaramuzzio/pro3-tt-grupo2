@@ -71,7 +71,6 @@ class VerMasPopulares extends Component {
 
 
     render() {
-        const { titulo } = this.props;
         return (
             <>
                 <input
@@ -81,7 +80,7 @@ class VerMasPopulares extends Component {
                     placeholder="Filtrar películas"
                 />
                 <button onClick={() => this.handleResetFilter()}>Eliminar Filtro</button>
-                <PeliGrid titulo={titulo} peliculas={this.state.peliculasFiltradas} boton={false} />
+                <PeliGrid titulo="Populares" peliculas={this.state.peliculasFiltradas} boton={false} />
                 <button onClick={() => this.handleLoadMore()}>Cargar Más</button>
             </>
         );

@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import Peli from "../Peli/Peli"
 import {Link} from "react-router-dom"
 import "./PeliGrid.css";
+import Favorito from "../../modules/favorito";
 
 
 class PeliGrid extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
-
+    constructor(props) {
+        super(props);
+        this.state = { 
+            favoritos: Favorito.buscar()
+        };
+    }
 
     render() {
         const {todas, titulo, peliculas, boton} = this.props
@@ -21,7 +24,7 @@ class PeliGrid extends Component {
                     </div>
                     <div className="portadaGrid">
                     {peliculas.map((pelicula, idx) => (  
-                            <Peli key={idx} pelicula={pelicula} />
+                            <Peli key={idx} pelicula={pelicula} favoritos={this.state.favoritos} agregar={Favorito.agregar} quitar={Favorito.quitar}/>
                         ))}
                     </div>  
                    
