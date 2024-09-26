@@ -26,12 +26,6 @@ class Peli extends Component {
         }
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.isFavorito !== this.props.isFavorito) {
-            this.setState({ isFavorito: this.props.isFavorito });
-        }
-    }
-
     handleFavoritoClick = () => {
         const { id } = this.props.pelicula;
         const { agregar, quitar } = this.props;
@@ -48,7 +42,7 @@ class Peli extends Component {
 
     render() {
         const { id, title, overview, poster_path } = this.props.pelicula;
-        const { isFavorito } = false;
+        const { isFavorito } = this.state;
         const truncar = (str) => str.length > 17 ? str.substring(0, 17) + "..." : str;
 
         return (
