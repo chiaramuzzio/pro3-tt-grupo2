@@ -38,6 +38,7 @@ class FavoriteComponent extends Component {
 
         return (
             <div className="portadaGrid">
+                <h2>Favoritos</h2>
                 {!this.state.loading && peliculas.length === 0 ? (
                     <p>No hay favoritos seleccionados</p>
                 ) :
