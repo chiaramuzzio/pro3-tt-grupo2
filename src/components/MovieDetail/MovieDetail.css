@@ -53,6 +53,10 @@ h3, p {
     color: #ffffff;
 }
 
+.geneross{
+    margin-bottom: 25px;
+}
+
 /* Info Section */
 .info {
     display: flex;

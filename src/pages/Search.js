@@ -41,7 +41,7 @@ class ResultadoBusqueda extends Component {
                     <PeliGrid peliculas={this.state.peliculas} titulo={`Resultados de tu busqueda: ${this.props.location.state.query}`} boton={false}/>
                 :
                     <div className='categoria'>
-                        <h2>No se encontraron resultados para tu busqueda "{this.props.location.state.query}"</h2>
+                        <h3>No se encontraron resultados para tu busqueda "{this.props.location.state.query}"</h3>
                     </div>
                 }
             </>
