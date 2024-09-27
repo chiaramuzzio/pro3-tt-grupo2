@@ -168,3 +168,23 @@ p{
     width: 100%;
     margin-top: 10px;
 }
+
+@media (max-width: 420px) {
+    .pelicula{
+        display: flex;
+        flex-wrap: nowrap;
+        width: 50vw;
+    }
+    #fotopeli{
+        width: 45vw;
+    }
+    .titfav{
+        width: 20vw;
+    }
+    .botones{
+        width: 40vw;
+    }
+    .verDetalle{
+        margin: 0.5px;
+    }
+}
