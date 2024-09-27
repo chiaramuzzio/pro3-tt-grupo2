@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PeliGrid from '../../components/PeliGrid/PeliGrid';
-;
+import '../../components/VerMas/VerMas.css';
 
 
 class VerMasPopulares extends Component {

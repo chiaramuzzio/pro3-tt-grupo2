@@ -37,7 +37,7 @@ class FavoriteComponent extends Component {
         const { peliculas } = this.state;
 
         return (
-            <div className="portadaGrid">
+            <div>
                 <h2>Favoritos</h2>
                 {!this.state.loading && peliculas.length === 0 ? (
                     <p>No hay favoritos seleccionados</p>

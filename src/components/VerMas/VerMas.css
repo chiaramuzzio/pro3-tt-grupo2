@@ -8,7 +8,7 @@
 }
 
 .lupa {
-    display: inline-block;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
@@ -29,7 +29,7 @@
     display: flex;
     justify-content: flex-end; 
     align-items: center; 
-    margin: 40px 30px 20px 0; 
+    margin: 40px 30px 20px 0;
 }
 
 .cargarmas{
