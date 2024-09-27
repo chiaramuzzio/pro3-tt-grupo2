@@ -82,7 +82,7 @@ class VerMasPopulares extends Component {
                 />
                 <button className="lupa" onClick={() => this.handleResetFilter()}>Eliminar Filtro</button>
                 </div>
-                <PeliGrid titulo="Populares" peliculas={this.state.peliculasFiltradas} boton={false} />
+                <PeliGrid titulo="Estrenos" peliculas={this.state.peliculasFiltradas} boton={false} />
                 <button className ="cargarmas" onClick={() => this.handleLoadMore()}>Cargar Más</button>
             </>
         );

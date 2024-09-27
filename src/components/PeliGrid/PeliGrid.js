@@ -27,7 +27,6 @@ class PeliGrid extends Component {
                             <Peli key={idx} pelicula={pelicula} />
                         ))}
                     </div>  
-                   
                 </article>
             </>
         );

@@ -79,8 +79,8 @@ class VerMasPopulares extends Component {
                     value={this.state.valorFiltrado}
                     onChange={(e) => this.handleFilter(e)}
                     placeholder="Filtrar películas"
-                />
-                <button className="lupa" onClick={() => this.handleResetFilter()}>Eliminar Filtro</button>
+                    />
+                    <button className="lupa" onClick={() => this.handleResetFilter()}>Eliminar Filtro</button>
                 </div>
                 <PeliGrid titulo="Populares" peliculas={this.state.peliculasFiltradas} boton={false} />
                 <button className ="cargarmas" onClick={() => this.handleLoadMore()}>Cargar Más</button>

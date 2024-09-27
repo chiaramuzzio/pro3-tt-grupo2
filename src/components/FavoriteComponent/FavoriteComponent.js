@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./FavoriteComponent.css";
 import Peli from "../Peli/Peli";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const api_key = "378786c706182646715863ed0e6d66cc";
 
@@ -37,20 +38,24 @@ class FavoriteComponent extends Component {
         const { peliculas } = this.state;
 
         return (
-            <div>
-                <h2>Favoritos</h2>
-                {!this.state.loading && peliculas.length === 0 ? (
-                    <p>No hay favoritos seleccionados</p>
-                ) :
-                (
+            <div>               
+                <article className="categoria">
+                    <div className="divTitulo">
+                        <h3 className='titulo'>Favoritos</h3>  
+                    </div>
                     <div className="portadaGrid">
-                        {peliculas.map((data, idx) => {
-                            return (
-                                <Peli key={idx} pelicula={data} />
-                            );
-                        })}
-                    </div> 
-                )}
+                        {!this.state.loading && peliculas.length > 0 ? peliculas.map((pelicula, idx) => (
+                            <Peli key={idx} pelicula={pelicula} />
+                        )) :
+                        (
+                        <div className="divNoFav">
+                            <p className="noFav">No hay peliculas favoritas seleccionadas...</p>
+                            <Link to="/" className="buttonTodas">Volver al Inicio</Link>
+                        </div>
+                        )
+                    }
+                    </div>  
+                </article>
             </div>
         );
     }

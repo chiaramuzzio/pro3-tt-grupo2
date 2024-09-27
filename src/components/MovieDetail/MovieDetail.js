@@ -60,7 +60,7 @@ class MovieDetail extends Component {
                     <h3 id="titdetmo">{movie.title}</h3>
                     <i
                         id={movie.id}
-                        onClick={isFavorito ? () => this.setState({isFavorito: Favorito.quitar(id)[0]}) : () => this.setState({isFavorito: Favorito.agregar(id)[0]})}
+                        onClick={isFavorito ? () => this.setState({isFavorito: Favorito.quitar(id)}) : () => this.setState({isFavorito: Favorito.agregar(id)})}
                         className={`fa-heart ${isFavorito ? 'fa-solid' : 'fa-regular'}`}
                     ></i>
                 </div>
@@ -70,7 +70,7 @@ class MovieDetail extends Component {
                 <div className="info">
                     <img
                         className="fotos"
-                        src={movie.poster_path ? `https://image.tmdb.org/t/p/w200${movie.poster_path}` : "./img/movies/not_available.png"}
+                        src={movie.poster_path ? `https://image.tmdb.org/t/p/w200${movie.poster_path}` : "/img/movies/not_available.png"}
                         alt={movie.title}
                     />
                     {trailerKey ? (

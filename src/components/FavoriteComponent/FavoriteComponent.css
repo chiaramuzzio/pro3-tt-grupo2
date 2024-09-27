@@ -2,7 +2,6 @@
     margin: auto;
 }
 
-
 .categoria{
     margin-top: 40px;
     margin-left: 40px;
@@ -12,11 +11,21 @@
     flex-wrap: wrap;
 }
 
-h2{
+h3{
     font-family: 'Roboto', sans-serif;
     color: white;
     font-weight: 5000;
     font-size: 25px;
+}
+
+.noFav{
+    font-size: larger;
+}
+
+.divNoFav{
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
 }
 
 .portadaGrid{
@@ -71,13 +80,27 @@ h2{
 }
 
 @media(max-width:420px){
+    .info{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
     .seccion1 {
         padding : 20px;
     }
 
-
     .fotos{
       width: 170px;
       height: 280px;  
+    }
+
+    .sinopsis {
+        height: auto;
+    }
+
+    .trailer{
+        display: none;
     }
 }

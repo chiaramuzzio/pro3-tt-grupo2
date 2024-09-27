@@ -26,13 +26,12 @@ class SearchForm extends Component {
             <>
             
                 <div className="buscador">
-                    <form onSubmit={(e) => this.handleCancelSubmit(e)} >
+                    <form className="buscador" onSubmit={(e) => this.handleCancelSubmit(e)} >
                         <input className="buscar"
                             name="query"
                             onChange={ (e)=> this.handleFormChange(e) }
                             value={this.state.query}
                         />
-
                         <button className="lupa" onClick={()=> this.handleFormSubmit()}>Search</button>
                     </form>
                 </div>

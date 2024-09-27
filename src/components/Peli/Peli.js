@@ -33,6 +33,10 @@ class Peli extends Component {
         const { id, title, overview, poster_path } = this.props.pelicula;
         const { isFavorito } = this.state; 
 
+        const imageUrl = poster_path 
+        ? `https://image.tmdb.org/t/p/original${poster_path}` 
+        : '/img/movies/not_available.png';
+
         const truncar = (str) => str.length > 17 ? str.substring(0, 17) + "..." : str;
 
         return (
@@ -40,7 +44,7 @@ class Peli extends Component {
                 <div className="portada">
                     <div className="pelicula">
                         <Link to={`/movie-detail/id/${id}`}>
-                            <img id="fotopeli" className="fotos" src={`https://image.tmdb.org/t/p/original${poster_path}`} alt={title} />
+                            <img id="fotopeli" className="fotos" src={imageUrl} alt={title} />
                         </Link>
                         <div className="titfav">
                             <Link to={`/movie-detail/id/${id}`}>
