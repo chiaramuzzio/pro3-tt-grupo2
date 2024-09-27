@@ -24,6 +24,7 @@ class SearchForm extends Component {
     render() {
         return(
             <>
+            
                 <div className="buscador">
                     <form onSubmit={(e) => this.handleCancelSubmit(e)} >
                         <input className="buscar"

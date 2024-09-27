@@ -1,0 +1,50 @@
+.buscar {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.333);
+    border-radius: 50px;
+    padding: 5px 10px;
+    border: 0;
+}
+
+.lupa {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #5028f0;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 100px;
+    font-weight: lighter;
+    height: 35px;
+    border: 0;
+    font-size: small;
+    margin-left: 5px;
+    cursor: pointer; 
+}
+
+.filtrador {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    margin: 40px 30px 20px 0; 
+}
+
+.cargarmas{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #5028f0;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 100px;
+    font-weight: lighter;
+    height: 35px;
+    border: 0;
+    font-size: small;
+    margin-left: 100px;
+}

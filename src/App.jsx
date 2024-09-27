@@ -9,8 +9,8 @@ import Favorites from "./pages/Favorites";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import VerMasEstrenos from "./pages/VerMasEstrenos";
-import VerMasPopulares from "./pages/VerMasPopulares";
+import VerMasEstrenos from "./pages/VerMas/VerMasEstrenos";
+import VerMasPopulares from "./pages/VerMas/VerMasPopulares";
 
 
 function App() {

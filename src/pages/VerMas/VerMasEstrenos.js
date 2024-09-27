@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import PeliGrid from '../components/PeliGrid/PeliGrid';
+import PeliGrid from '../../components/PeliGrid/PeliGrid';
+import "./VerMas.css";
 ;
 
 
-class VerMasPopulares extends Component {
+class VerMasEstrenos extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -28,7 +29,7 @@ class VerMasPopulares extends Component {
 
 
     fetchMovies() {
-        fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&api_key=31e421d77201e7a1eefe33f85b67fa3b&page=${this.state.paginaActual}`)
+        fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&api_key=31e421d77201e7a1eefe33f85b67fa3b&page=${this.state.paginaActual}`)
             .then(response => response.json())
             .then(data => this.setState({
                 peliculas: data.results,
@@ -59,7 +60,7 @@ class VerMasPopulares extends Component {
 
 
     handleLoadMore() {
-        fetch(`https://api.themoviedb.org/3/movie/popular?language=en-US&api_key=31e421d77201e7a1eefe33f85b67fa3b&page=${this.state.paginaActual}`)
+        fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&api_key=31e421d77201e7a1eefe33f85b67fa3b&page=${this.state.paginaActual}`)
             .then(response => response.json())
             .then(data => this.setState({
                 peliculas: this.state.peliculas.concat(data.results),
@@ -73,14 +74,14 @@ class VerMasPopulares extends Component {
     render() {
         return (
             <>
-                <input
+                <input 
                     type="text"
                     value={this.state.valorFiltrado}
                     onChange={(e) => this.handleFilter(e)}
                     placeholder="Filtrar películas"
                 />
                 <button onClick={() => this.handleResetFilter()}>Eliminar Filtro</button>
-                <PeliGrid titulo="Populares" peliculas={this.state.peliculasFiltradas} boton={false} />
+                <PeliGrid titulo="Estrenos" peliculas={this.state.peliculasFiltradas} boton={false} />
                 <button onClick={() => this.handleLoadMore()}>Cargar Más</button>
             </>
         );
@@ -88,4 +89,4 @@ class VerMasPopulares extends Component {
 }
 
 
-export default VerMasPopulares;
+export default VerMasEstrenos;

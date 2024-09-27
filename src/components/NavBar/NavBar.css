@@ -12,7 +12,9 @@
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     margin-right: 150px;
+    margin-left: 70px;
 }
+
 
 @media (max-width: 420px) {
     .menu {
@@ -20,5 +22,8 @@
         font-size: smaller;
         height: 30vh;
         width: 95vw;
+    }
+    .navegador{
+        margin-right: 0;
     }
 }
