@@ -4,9 +4,22 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 5%;
 }
 .NotFound{
     color: white;
     display: flex;
     justify-content: center;
+}
+
+
+@media (max-width: 420px) {
+    .gifNotFound{
+        display: flex;
+        width: 80%;
+        height: auto;
+        margin-top: 10%;
+    }
+
+
 }
