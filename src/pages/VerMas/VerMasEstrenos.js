@@ -14,11 +14,9 @@ class VerMasPopulares extends Component {
         };
     }
 
-
     componentDidMount() {
         this.fetchMovies();
     }
-
 
     componentDidUpdate(prevProps) {
         if (this.props.match.params.category !== prevProps.match.params.category) {
@@ -26,18 +24,16 @@ class VerMasPopulares extends Component {
         }
     }
 
-
     fetchMovies() {
         fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&api_key=31e421d77201e7a1eefe33f85b67fa3b&page=${this.state.paginaActual}`)
-            .then(response => response.json())
-            .then(data => this.setState({
-                peliculas: data.results,
-                peliculasFiltradas: data.results,
-                paginaActual: this.state.paginaActual + 1,
-            }))
-            .catch(err => console.log(err));
+        .then(response => response.json())
+        .then(data => this.setState({
+            peliculas: data.results,
+            peliculasFiltradas: data.results,
+            paginaActual: this.state.paginaActual + 1,
+        }))
+        .catch(err => console.log(err));
     }
-
 
     handleFilter(e) {
         const userValue = e.target.value;
@@ -49,7 +45,6 @@ class VerMasPopulares extends Component {
         });
     }
 
-
     handleResetFilter() {
         this.setState({
             valorFiltrado: "",
@@ -57,18 +52,16 @@ class VerMasPopulares extends Component {
         });
     }
 
-
     handleLoadMore() {
         fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&api_key=31e421d77201e7a1eefe33f85b67fa3b&page=${this.state.paginaActual}`)
-            .then(response => response.json())
-            .then(data => this.setState({
-                peliculas: this.state.peliculas.concat(data.results),
-                peliculasFiltradas: this.state.peliculasFiltradas.concat(data.results),
-                paginaActual: this.state.paginaActual + 1,
-            }))
-            .catch(err => console.log(err));
+        .then(response => response.json())
+        .then(data => this.setState({
+            peliculas: this.state.peliculas.concat(data.results),
+            peliculasFiltradas: this.state.peliculasFiltradas.concat(data.results),
+            paginaActual: this.state.paginaActual + 1,
+        }))
+        .catch(err => console.log(err));
     }
-
 
     render() {
         return (
@@ -79,15 +72,16 @@ class VerMasPopulares extends Component {
                     value={this.state.valorFiltrado}
                     onChange={(e) => this.handleFilter(e)}
                     placeholder="Filtrar películas"
-                />
-                <button className="lupa" onClick={() => this.handleResetFilter()}>Eliminar Filtro</button>
+                    />
+                    <button className="lupa" onClick={() => this.handleResetFilter()}>Eliminar</button>
                 </div>
+
                 <PeliGrid titulo="Estrenos" peliculas={this.state.peliculasFiltradas} boton={false} />
+
                 <button className ="cargarmas" onClick={() => this.handleLoadMore()}>Cargar Más</button>
             </>
         );
     }
 }
-
 
 export default VerMasPopulares;

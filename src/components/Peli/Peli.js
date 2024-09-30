@@ -10,14 +10,12 @@ class Peli extends Component {
             verDescripcion: false,
             isFavorito: false
         };
-
     }
 
     handleverDescripcion = () => {
         this.setState({
             verDescripcion: !this.state.verDescripcion
         });
-        
     }
 
     componentDidMount() {
@@ -62,14 +60,14 @@ class Peli extends Component {
                         </article>
 
                         <div className="botones">
-
-                            <button className="verDetalle vermas" onClick={this.handleverDescripcion}>
-                                {this.state.verDescripcion ? "Ocultar Descripción" : "Ver Descripción"}
+                            <button className="verDetalle" onClick={this.handleverDescripcion}>
+                                {this.state.verDescripcion ? "Ver Menos" : "Descripcion"}
                             </button>
-
-                            <button className="verDetalle">
-                                <Link to={`/movie-detail/id/${id}`} className="vermas">Detalle</Link>
-                            </button>
+                            <Link to={`/movie-detail/id/${id}`}>
+                                <button className="verDetalle">
+                                    Detalle
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

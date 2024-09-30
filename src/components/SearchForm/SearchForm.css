@@ -8,7 +8,7 @@
     display: flex;
     justify-content: flex-end; 
     align-items: center; 
-    margin: 30px 30px 20px 0; 
+    padding-bottom: 2.5px;
 }
 
 .lupa{
@@ -45,10 +45,20 @@
     border: 0;
 }
 
+.divBuscador{
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    background-color: #706d7c2c;
+    width: 100%;
+    padding: 25px;
+}
+
 @media(max-width:420px){
     .buscador{
         margin: 20px 0 0 0;
     }
+
     .lupa{
         margin-right: 20px;
     }

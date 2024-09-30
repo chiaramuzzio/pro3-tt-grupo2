@@ -15,6 +15,7 @@ class PeliGrid extends Component {
 
     render() {
         const {todas, titulo, peliculas, boton} = this.props
+
         return (
             <>
                 <article className="categoria">
@@ -23,7 +24,7 @@ class PeliGrid extends Component {
                         {boton? <Link className="buttonTodas" to={todas}>Ver Todas</Link>: ""}
                     </div>
                     <div className="portadaGrid">
-                    {peliculas.map((pelicula, idx) => (  
+                        {peliculas.map((pelicula, idx) => (  
                             <Peli key={idx} pelicula={pelicula} />
                         ))}
                     </div>  
@@ -32,6 +33,5 @@ class PeliGrid extends Component {
         );
     }
 }
-
 
 export default PeliGrid;

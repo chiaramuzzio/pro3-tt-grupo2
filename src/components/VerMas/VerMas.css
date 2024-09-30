@@ -29,11 +29,13 @@
     display: flex;
     justify-content: flex-end; 
     align-items: center; 
-    margin: 40px 30px 20px 0;
+    background-color: #706d7c2c;
+    width: 100%;
+    padding: 25px;
 }
 
 .cargarmas{
-    display: inline-block;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
@@ -47,4 +49,22 @@
     border: 0;
     font-size: small;
     margin-left: 100px;
+    cursor: pointer;
+    transition: transform 300ms ease-out;
+}
+
+.cargarmas:hover {
+    color: #2d63c8;
+    background-color: #ffffff;
+    transform: translate(0px, 0px) scale(1.02, 1.02);
+    cursor: pointer;
+}
+
+@media (max-width: 420px) {
+    .filtrador {
+        margin: 20px 0 0 0;
+    }
+    .cargarmas {
+        margin-left: 20px;
+    }
 }

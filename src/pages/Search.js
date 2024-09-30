@@ -29,25 +29,25 @@ class ResultadoBusqueda extends Component {
         .catch((e) => console.log(e))
     }
 
-
     render() {
         const { loading, peliculas } = this.state;
+
         if (loading) {
             return <Loader/>
         }
+
         return (
             <>
                 {!this.state.isLoading && peliculas.length > 0 ?
                     <PeliGrid peliculas={this.state.peliculas} titulo={`Resultados de tu busqueda: ${this.props.location.state.query}`} boton={false}/>
                 :
                     <div className='categoria'>
-                        <h3>No se encontraron resultados para tu busqueda "{this.props.location.state.query}"</h3>
+                        <h3>No se encontraron resultados para <em>"{this.props.location.state.query}"</em></h3>
                     </div>
                 }
             </>
         )
     }
 }
-
 
 export default ResultadoBusqueda;

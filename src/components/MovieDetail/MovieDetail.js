@@ -27,8 +27,8 @@ class MovieDetail extends Component {
             fetch(urlVideo).then(response => response.json())
         ])
         .then(([movieData, videoData]) => {
-            console.log(movieData);
-            console.log(videoData);
+            // console.log(movieData);
+            // console.log(videoData);
 
             const trailer = videoData.results.find(video => video.type === "Trailer");
 
@@ -90,6 +90,5 @@ class MovieDetail extends Component {
         );
     }
 }
-
 
 export default MovieDetail;

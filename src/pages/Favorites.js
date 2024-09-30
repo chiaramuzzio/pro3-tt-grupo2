@@ -16,9 +16,7 @@ class Favorites extends Component {
     }
 
     render() {
-        const { loading } = this.state;
-
-        return loading ? <Loader /> : <FavoriteComponent />;
+        return this.state.loading ? <Loader /> : <FavoriteComponent />;
     }
 }
 

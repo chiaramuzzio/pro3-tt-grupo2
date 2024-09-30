@@ -1,6 +1,7 @@
 *{
     text-decoration: none;
 }
+
 .categoria{
     margin-left: 100px;
     display: flex;
@@ -49,4 +50,3 @@
     background-color: #ffffff;
     transform: translate(0px, 0px) scale(1.02, 1.02);
 }
-

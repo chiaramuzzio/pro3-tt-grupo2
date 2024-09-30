@@ -15,6 +15,7 @@ p{
     color: white;
     font-size: 12px;
 }
+
 .main_home{
     margin: auto;
 }
@@ -33,6 +34,7 @@ p{
 
 .fa-heart{
     justify-self: flex-end;
+    cursor: pointer;
 }
 
 .fotos{
@@ -92,12 +94,19 @@ p{
     color: white;
     text-decoration: none;
 }
+
+/* .vermas:hover{
+    font-family: 'Roboto', sans-serif;
+    color: #5028f0;
+    text-decoration: none;
+} */
+
 .mostrar {
-    display: block; /* Muestra el contenido */
+    display: block;
 }
 
 .ocultar {
-    display: none;  /* Oculta el contenido */
+    display: none;
 }
 
 .desc {
@@ -113,8 +122,8 @@ p{
 .detalle a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #5028f0; /* Color de fondo */
-    color: white; /* Color del texto */
+    background-color: #5028f0; 
+    color: white; 
     text-align: center;
     text-decoration: none;
     border-radius: 100px;
@@ -127,6 +136,7 @@ p{
     color: #2d63c8;
     background-color: #ffffff;
     transform: translate(0px, 0px) scale(1.02, 1.02);
+    cursor: pointer;
 }
 
 .verDetalle {
@@ -150,7 +160,6 @@ p{
     background-color: #ffffff;
     transform: translate(0px, 0px) scale(1.02, 1.02);
     cursor: pointer;
-
 }
 
 .verDetalle:hover {
@@ -158,7 +167,6 @@ p{
     background-color: #ffffff;
     transform: translate(0px, 0px) scale(1.02, 1.02);
     cursor: pointer;
-
 }
 
 .botones{
@@ -176,15 +184,19 @@ p{
         flex-wrap: nowrap;
         width: 50vw;
     }
+
     #fotopeli{
         width: 45vw;
     }
+
     .titfav{
         width: 20vw;
     }
+
     .botones{
         width: 40vw;
     }
+
     .verDetalle{
         margin: 0.5px;
     }

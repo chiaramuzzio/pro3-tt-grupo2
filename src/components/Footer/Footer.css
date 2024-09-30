@@ -22,7 +22,10 @@ footer{
 
 @media(max-width:420px){
     footer{
-        font-size: smaller;
         height: 7vh;
+    }
+
+    footer p{
+        font-size: x-small;
     }
 }

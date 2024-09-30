@@ -15,7 +15,6 @@
     margin-left: 70px;
 }
 
-
 @media (max-width: 420px) {
     .menu {
         flex-direction: column;
@@ -23,6 +22,7 @@
         height: 30vh;
         width: 95vw;
     }
+    
     .navegador{
         margin: 0;
     }

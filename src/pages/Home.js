@@ -9,7 +9,6 @@ const urlEstrenos = `https://api.themoviedb.org/3/movie/upcoming?api_key=${api_k
 
 class Home extends Component {
 
-
   constructor(props) {
     super(props);
     this.state = {
@@ -36,7 +35,6 @@ class Home extends Component {
       .catch((e) => console.log(e));
   }
 
-
   render() {
     return (
       <>
@@ -51,8 +49,4 @@ class Home extends Component {
   }
 }
 
-
 export default Home;
-
-
-

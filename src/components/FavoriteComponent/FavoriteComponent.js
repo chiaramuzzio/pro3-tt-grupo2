@@ -18,7 +18,7 @@ class FavoriteComponent extends Component {
     componentDidMount() {
         const recuperoStorage = localStorage.getItem('favoritos');
         let favoritos = recuperoStorage ? JSON.parse(recuperoStorage) : [];        
-        console.log(favoritos);
+        // console.log(favoritos);
         if (favoritos.length > 0) {
             favoritos.forEach((id) => {
                 fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`)
@@ -60,6 +60,5 @@ class FavoriteComponent extends Component {
         );
     }
 }
-
 
 export default FavoriteComponent;

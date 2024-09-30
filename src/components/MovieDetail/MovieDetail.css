@@ -1,30 +1,27 @@
-/* Global Styles */
 * {
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-body {
+/* body {
     background-color: #262626;
     margin: 0;
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 10vh 0 16vh 0;
-}
+} */
 
 h3, p {
     font-family: 'Roboto', sans-serif;
     color: white;
 }
 
-/* Main Details Section */
 .main_detalles {
     margin: auto;
     padding-top: 5vh;
 }
 
-/* Movie Details Section */
 .dtl_pelicula {
     display: flex;
     flex-direction: column;
@@ -34,7 +31,6 @@ h3, p {
     margin: auto;
 }
 
-/* Heart Icon */
 .fa-heart {
     font-size: medium;
     margin: 15px;
@@ -57,7 +53,6 @@ h3, p {
     margin-bottom: 25px;
 }
 
-/* Info Section */
 .info {
     display: flex;
     flex-direction: row;
@@ -106,7 +101,6 @@ h3, p {
     transform: scale(1.02);
 }
 
-/* Nom and Fav Section */
 #nomandfav {
     display: flex;
     flex-direction: row;
@@ -114,7 +108,6 @@ h3, p {
     align-items: center;
 }
 
-/* Responsive Styles */
 @media (max-width: 420px) {
     body {
         padding-top: 30vh;
